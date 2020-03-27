@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { ACCENT_COLOR } from '../core/Constants';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -11,7 +12,7 @@ export default function AppNavigator() {
         <NavigationContainer>
             <Tab.Navigator
                 initialRouteName="Home"
-                activeColor="#41B883"
+                activeColor={ACCENT_COLOR}
                 inactiveColor="gray"
                 shifting
                 //labelStyle={{ fontSize: 12 }}
@@ -26,7 +27,7 @@ export default function AppNavigator() {
                     name="Feed"
                     component={HomeScreen}
                     options={{
-                        tabBarLabel: 'Home',
+                        tabBarLabel: '',
                         tabBarIcon: ({ color }) => (
                             <MaterialCommunityIcons name="trending-up" color={color} size={26} />
                         ),
@@ -36,9 +37,9 @@ export default function AppNavigator() {
                     name="Notifications"
                     component={HomeScreen}
                     options={{
-                        tabBarLabel: 'Updates',
+                        tabBarLabel: '',
                         tabBarIcon: ({ color }) => (
-                            <MaterialCommunityIcons name="bell" color={color} size={26} />
+                            <MaterialCommunityIcons name="swap-vertical-variant" color={color} size={26} />
                         ),
                     }}
                 />
@@ -46,7 +47,7 @@ export default function AppNavigator() {
                     name="Profile"
                     component={HomeScreen}
                     options={{
-                        tabBarLabel: 'Profile',
+                        tabBarLabel: '',
                         tabBarIcon: ({ color }) => (
                             <MaterialCommunityIcons name="account" color={color} size={26} />
                         ),
